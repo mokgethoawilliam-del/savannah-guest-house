@@ -1,0 +1,7 @@
+{
+  "name": "Savannah Guest House",
+  "description": "Official website for Savannah Guest House in Polokwane, offering clean, comfortable, and affordable accommodation for families and business travelers.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
