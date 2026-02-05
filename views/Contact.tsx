@@ -61,11 +61,20 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Map Section */}
           <div>
-            <div className="h-full min-h-[400px] flex flex-col">
+            <div className="h-full flex flex-col">
               <h2 className="text-3xl font-bold text-stone-900 mb-10">Find Us</h2>
-              <PlaceholderImage label="Interactive Map View Placeholder" className="flex-grow shadow-lg" aspectRatio="h-full" />
+              <div className="w-full flex-grow rounded-xl overflow-hidden shadow-lg border border-stone-200 min-h-[400px]">
+                <iframe 
+                  className="w-full h-full"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(BUSINESS_INFO.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  frameBorder="0" 
+                  scrolling="no" 
+                  title="Savannah Guest House Location"
+                  aria-label="Map showing location of Savannah Guest House"
+                ></iframe>
+              </div>
               <p className="mt-4 text-sm text-stone-500 text-center italic">Located in the quiet suburb of Flora Park, close to Savannah Mall and Netcare Pholoso Hospital.</p>
             </div>
           </div>

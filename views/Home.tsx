@@ -8,9 +8,13 @@ const Home: React.FC = () => {
   return (
     <div className="animate-in fade-in duration-700">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center bg-stone-100">
+      <section className="relative h-[85vh] flex items-center bg-stone-900">
         <div className="absolute inset-0 z-0">
-          <PlaceholderImage label="Hero Image: Savannah Main View" className="w-full h-full rounded-none opacity-60" aspectRatio="h-full" />
+          <img 
+            src="https://ik.imagekit.io/fabridev/outside.png" 
+            alt="Savannah Guest House Exterior" 
+            className="w-full h-full object-cover opacity-60"
+          />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl bg-white/90 backdrop-blur-sm p-10 md:p-16 rounded-xl shadow-2xl">
@@ -56,9 +60,13 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <PlaceholderImage label="Garden View" aspectRatio="aspect-square" />
-              <div className="pt-8">
-                <PlaceholderImage label="Swimming Pool" aspectRatio="aspect-square" />
+              <div className="rounded-xl overflow-hidden shadow-lg h-full">
+                  <img src="https://ik.imagekit.io/fabridev/outside.png" alt="Guest House Exterior" className="w-full h-full object-cover" />
+              </div>
+              <div className="pt-8 rounded-xl overflow-hidden h-full">
+                  <div className="rounded-xl overflow-hidden shadow-lg h-full">
+                    <img src="https://ik.imagekit.io/fabridev/exterior.jpg" alt="Guest House Grounds" className="w-full h-full object-cover" />
+                  </div>
               </div>
             </div>
           </div>

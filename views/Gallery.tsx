@@ -1,18 +1,48 @@
 
 import React from 'react';
-import PlaceholderImage from '../components/PlaceholderImage';
 
 const Gallery: React.FC = () => {
   const galleryItems = [
-    { label: "Exterior & Reception", size: "col-span-1 md:col-span-2" },
-    { label: "Garden Seating Area", size: "col-span-1" },
-    { label: "Standard Room Interior", size: "col-span-1" },
-    { label: "Swimming Pool Side", size: "col-span-1 md:col-span-2" },
-    { label: "Family Suite Bathroom", size: "col-span-1" },
-    { label: "Dining / Breakfast Area", size: "col-span-1" },
-    { label: "Secure Parking Facility", size: "col-span-1" },
-    { label: "Night View Exterior", size: "col-span-1" },
-    { label: "Guest Lounge", size: "col-span-1 md:col-span-3" },
+    { 
+      url: "https://ik.imagekit.io/fabridev/room%201.jpg", 
+      label: "Deluxe Double Room", 
+      size: "col-span-1" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/176006273.jpg", 
+      label: "Comfortable Interiors", 
+      size: "col-span-1" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/176006122.jpg", 
+      label: "Room Amenities", 
+      size: "col-span-1" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/164642389.jpg", 
+      label: "Guest Accommodation", 
+      size: "col-span-1 md:col-span-2" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/garden.jpg", 
+      label: "Lush Gardens", 
+      size: "col-span-1" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/outside.png", 
+      label: "Property Exterior", 
+      size: "col-span-1" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/outdoor.jpg", 
+      label: "Outdoor Relaxation", 
+      size: "col-span-1 md:col-span-2" 
+    },
+    { 
+      url: "https://ik.imagekit.io/fabridev/pool.jpg", 
+      label: "Swimming Pool", 
+      size: "col-span-1 md:col-span-3" 
+    },
   ];
 
   return (
@@ -27,16 +57,17 @@ const Gallery: React.FC = () => {
       </header>
 
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
           {galleryItems.map((item, index) => (
-            <div key={index} className={`${item.size} group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all`}>
-              <PlaceholderImage 
-                label={item.label} 
-                aspectRatio={item.size.includes('md:col-span-3') ? "aspect-[21/9]" : "aspect-video"}
-                className="group-hover:scale-105 transition-transform duration-500"
+            <div key={index} className={`${item.size} group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all h-full`}>
+              <img 
+                src={item.url}
+                alt={item.label}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                <span className="text-white font-medium tracking-widest uppercase text-sm">{item.label}</span>
+                <span className="text-white font-bold tracking-widest uppercase text-sm border-b-2 border-emerald-500 pb-1">{item.label}</span>
               </div>
             </div>
           ))}
